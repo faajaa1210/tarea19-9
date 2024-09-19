@@ -1,0 +1,97 @@
+.contenedor{
+    height: 100vh;
+    display: grid;
+    font-size: 25;
+    grid-gap: 15px;
+    text-align: center;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr 1fr 7fr 1fr;
+    grid-template-areas: "cabeza cabeza cabeza"
+                         " menu   menu    menu"
+                         "contenido contenido publi"
+                         "pie   pie      pie"
+                         ;
+}
+
+.contenedor>div{
+    background-color: rgb(252, 82, 223);
+}
+
+.contenedor .cabeza{
+    background-color: olivedrab;
+    grid-column: cabeza;
+}
+.contenedor .menu{
+    background-color: turquoise;
+    grid-column: menu;
+}
+.contenedor .contenido{
+    background-color: rgb(47, 132, 153);
+    grid-column: contenido;    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:"contenido1 contenido2";
+
+}
+
+.contenedor .contenido .cont1{
+    border: 3px solid;
+    grid-area: contenido1;
+}
+.contenedor .contenido .cont2{
+    border: 3px solid;
+    grid-area: contenido2;
+}
+.contenedor .publi{
+    padding: 10px;
+    background-color: rgb(57, 184, 121);
+    grid-column: publi;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "publi1"
+    "publi2";
+}
+.publi1 {
+    margin: 3px;
+    border: 3px solid;
+    grid-area: publi1;
+}
+.publi2 {
+    margin: 3px;
+    border: 3px solid;
+    grid-area: publi2;
+}
+
+.contenedor .pie{
+    background-color: rgb(154, 206, 154);
+    grid-column: pie;
+    padding: 20px 0;
+}
+
+.contenido .cont1{
+    background-color: rgb(58, 5, 5);
+    margin: 7px;
+   
+}
+.contenido .cont2{
+    background-color: rgb(54, 7, 7);
+    margin: 7px;
+
+}
+
+@media screen and (max-width : 500px) {
+    .contenedor {
+        grid-template-areas: 
+        "cabeza cabeza cabeza"
+        " menu   menu    menu"
+        "contenido contenido contenido"
+        "publi publi publi"
+        "pie   pie   pie"
+        ;
+    }
+}
+
